@@ -11,9 +11,8 @@ class M_user extends CI_Model
         return $query->result();
     }
 
-    public function insertData()
+    public function insertData($dataPost)
     {
-        $dataPost = $this->input->post();
         $this->username    = $dataPost['username'];
         $this->fullname    = $dataPost['fullname'];
         $this->dob    =  date('Y-m-d', strtotime($dataPost['dob']));
