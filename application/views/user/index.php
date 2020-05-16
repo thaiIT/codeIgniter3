@@ -204,7 +204,7 @@
                         } else {
                             var htmlContent = '';
                             $.each(JSON.parse(responses), function(index){
-                                htmlContent += '<tr><td class="username">' + this.username + '</td><td class="fullname">' + this.fullname + '</td><td class="dob">' + this.dob + '</td><td>' + this.created_time + '</td><td style="width: 50px;text-align: center;"><a  class="edit ajax" href="<?php echo base_url('user/updateAjax/'); ?>' + this.id + '">Edit</a></td></td><td style="width: 50px;text-align: center;"><a  class="remove ajax" href="<?php echo base_url('user/deleteAjax/'); ?>' + this.id + '">X</a></td></tr>';
+                                htmlContent += '<tr><td class="username">' + this.username + '</td><td class="fullname">' + this.fullname + '</td><td class="dob">' + this.dob + '</td><td>' + this.created_time + '</td><td style="width: 50px;text-align: center;"><a data-id=" ' + this.id + '" class="edit ajax" href="<?php echo base_url('user/updateAjax/'); ?>' + this.id + '">Edit</a></td></td><td style="width: 50px;text-align: center;"><a  class="remove ajax" href="<?php echo base_url('user/deleteAjax/'); ?>' + this.id + '">X</a></td></tr>';
                             });
                             setTimeout(function() {
                                 $("#table-user").html('<table class="table"><thead><tr><th>Name</th><th>Full Name</th><th>Date of Birth</th><th>Created Time</th><th style="width: 50px;text-align: center;">Edit</th><th style="width: 50px;text-align: center;">Delete</th></tr></thead><tbody>' + htmlContent + '</tbody></table>');
